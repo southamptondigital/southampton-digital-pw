@@ -1,0 +1,10 @@
+.pw-init .pw-dropdown-menu,
+.pw-init .pw-button-dropdown {
+  display: none;
+}
+.pw-init .WireTab {
+  display: none;
+}
+ul.uk-navbar-nav ul {
+  display: none;
+}

@@ -1,0 +1,33 @@
+.pw-notices {
+  list-style: none;
+  padding-left: 0;
+  margin: 3px 0;
+  li {
+    list-style: none;
+    padding-left: 0;
+    margin: 3px 0;
+  }
+  .notice-remove {
+    float: right;
+    color: @global-color;
+  }
+  .uk-alert-primary .notice-remove {
+    color: @text-primary-color;
+  }
+  .uk-alert-warning .notice-remove {
+    color: @text-warning-color;
+  }
+  .uk-alert-danger .notice-remove {
+    color: @text-danger-color;
+  }
+}
+
+.pw-layout-sidenav-tree,
+.pw-layout-sidenav-tree-alt {
+  .pw-notices {
+    margin-top: 0;
+    > li:first-child {
+      margin-top: 0;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+// Uikit table definitions
+.uk-table {
+  > tbody > tr > th {
+    vertical-align: top;
+    text-transform: none;
+    font-size: @global-font-size;
+  }
+  .sort-date, 
+  .pw-table-sort-value {
+    display: none;
+  }
+}
+
+// ProcessWire responsive tables
+.pw-table-responsive {
+  margin-top: @global-margin;
+  margin-bottom: @global-margin;
+}
+
+// ProcessWire sortable tables
+.pw-table-sortable,
+table.ProcessListerTable thead {
+  th {
+    cursor: pointer;
+  }
+  th:hover {
+    text-decoration: underline;
+  }
+}
+
+table.AdminDataTable {
+  width: 100%;
+}
+

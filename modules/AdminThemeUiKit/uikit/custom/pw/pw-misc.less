@@ -1,0 +1,106 @@
+// Miscellaneous 
+
+// box-sizing
+*, *:before, *:after {
+  // Note: Uikit overrides this in some cases
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#pw-masthead {
+  height: 80px;
+}
+
+.pw-logo {
+  max-height: 50px; 
+}
+
+.pw-nav-icon {
+  margin-right: 5px !important;
+}
+
+// debug info from /wire/templates-admin/debug.inc
+#debug {
+  padding: @global-small-margin;
+  display: none;
+}
+
+// Pop-out panel for PageList, PageView, debug, etc. 
+.pw-panel-container {
+  .pw-panel-button {
+    background: @global-secondary-background;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    small.ui-button-text {
+      font-size: @global-small-font-size;
+      line-height: @global-small-font-size;
+    }
+  }
+}
+
+// make breadcrumb separators lighter
+.uk-breadcrumb>:nth-child(n+2):not(.uk-first-column)::before {
+  color: lighten(@global-muted-color, 25%);
+}
+
+// modal window
+body.modal {
+  #main {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  &.modal-inline #main {
+    // modal-inline means parent window is already providing left/right padding
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .InputfieldForm {
+    margin-top: @global-margin;
+  }
+}
+
+body.pw-layout-sidenav {
+  .pw-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  #pw-masthead {
+    .pw-logo {
+      height: 40px;
+    }
+    .uk-navbar-nav > li > a {
+      height: 60px;
+    }
+    .uk-breadcrumb {
+      margin-left: @global-margin;
+    }
+  }
+}
+
+body.pw-layout-sidenav-side {
+  #pw-sidenav-bar {
+    padding-top: 0 !important;
+  }
+}
+
+// search box in upper right corner
+.pw-search-input {
+  // left padding to allow space for search icon
+  padding-left: 30px;
+}
+
+#offcanvas-nav .pw-search-form {
+  .uk-inline,
+  .pw-search-input {
+    width: 100%;
+  }
+}
+
+.WireTabs,
+#ProcessPageEdit #PageEditTabs {
+  // drop any margin between tabs and whatever is next
+  // this probably is only appropriate with the default Uikit tabs styling
+  margin-bottom: @pw-tabs-margin-bottom;
+}
+

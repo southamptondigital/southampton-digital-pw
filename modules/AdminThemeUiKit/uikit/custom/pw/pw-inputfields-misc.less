@@ -1,0 +1,64 @@
+/***************************************************************************
+ * Specific Inputfield type customizations 
+ *
+ */
+
+.InputfieldPageNameURL {
+  // page name URL
+  font-size: @global-small-font-size;
+}
+
+.InputfieldCheckbox,
+.InputfieldCheckboxes,
+.InputfieldRadios {
+  .InputfieldContent label {
+    // checkboxes and radios use smaller font size for labels
+    font-size: @global-small-font-size;
+  }
+}
+
+.InputfieldHidden {
+  // hidden Inputfield type never appears in output
+  display: none !important;
+}
+
+
+/****************************************************************************
+ * Render Value Mode 
+ *
+ * Used when only values are being rendered in the form (no inputs)
+ *
+ */
+
+.InputfieldRenderValueMode {
+
+  .InputfieldSelect li,
+  .InputfieldRadios li,
+  .InputfieldCheckboxes li {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .InputfieldSubmit,
+  .InputfieldButton {
+    display: none;
+  }
+}
+
+
+/*** Misc **********************************************************/
+
+.InputfieldMarkup {
+  &.InputfieldHeaderHidden {
+    outline: none !important;
+    > .InputfieldContent {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+.InputfieldCheckboxes ul,
+.InputfieldRadios ul {
+  margin-bottom: 0;
+}
