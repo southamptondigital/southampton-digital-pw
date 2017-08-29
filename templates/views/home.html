@@ -1,0 +1,51 @@
+{% include 'partials/header.html' %}
+
+  <main container>
+    <header>
+      <h1><a href='/'>Southampton.Digital</a></h1>
+      <p>All the wonderous digital events in and around Southampton | <a href="https://slack.southampton.digital/">Join us on Slack</a></p>
+    </header>
+
+    <section>
+      <div class='flex'>
+        <!-- Sort the events by date -->
+        <!-- Loop through events -->
+        {% for event in eventListings %}
+            <div class="card-box" itemscope itemtype="http://schema.org/Event">
+              <div class="card-header">
+                <div class="card-date">
+                  <div>{{ event.date }}</div>
+                  <div>{{ event.date }}</div>
+                  <div>{{ event.date }}</div>
+                </div>
+                <div class="card-title">
+                  <h3>{{ event.name }}</h3>
+                </div>
+              </div>
+              <div class="card-content">
+                <p>{{ event.summary }}</p>
+                <span class="meta-info"></span>
+              </div>
+              <div class="meta-info">
+                <small>Starts at: {{ event.date }}</small>
+              </div>
+              <div class="card-footer">
+                  <ul class="button-group">
+                    <li><a class="item" target="_blank" href="{{ event.href }}">Website</a></li>
+                    <li><a class="item" target="_blank" href='http://maps.google.co.in/maps?q="{{ event.location }}"'>Map</a></li>
+                    {% if events.tickets_href is defined  %}
+                    <li><a class="item" href='{{ event.tickets_href }}'>Tickets</a></li>
+                    {% else %}
+                      {% if event.group_contact_href is defined %}
+                      <li><a class="item" href='{{ event.group_contact_href }}'>Contact</a></li>
+                      {% else %}
+                      <li><a class="item" href='mailto:"{{ event.group_mailto }}"'>Contact</a></li>
+                      {% endif %}
+                    {% endif %}
+                  </ul>
+              </div>
+            </div>
+        {% endfor %}
+      </div>
+    </section>
+{% include 'partials/footer.html' %}

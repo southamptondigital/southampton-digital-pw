@@ -1,0 +1,22 @@
+{
+  "name": "southampton-digital-pw",
+  "version": "1.0.0",
+  "description": "Southampton using Processwire CMF",
+  "main": "index.js",
+  "scripts": {
+    "watch": "nodemon -e scss -x \"npm run build\"",
+    "build": "npm run build:sass && npm run build:autoprefixer && npm run build:cssmin",
+    "build:sass": "node-sass --include-path scss templates/styles/main.scss   templates/styles/build.css",
+    "build:autoprefixer": "postcss --use autoprefixer  -r templates/styles/build.css",
+    "build:cssmin": "cssmin templates/styles/build.css > templates/styles/main.css"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.7.7",
+    "cssmin": "^0.4.3",
+    "node-sass": "^4.5.2",
+    "nodemon": "^1.11.0",
+    "postcss": "^5.2.16",
+    "postcss-cli": "^3.1.1"
+  },
+  "dependencies": {}
+}
