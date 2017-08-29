@@ -3,7 +3,8 @@ config.rb
 .sass-cache/
 
 # config files
-
+config-dev.php
+config-prod.php
 
 # ProcessWire Files And Folders
 *.old
