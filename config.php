@@ -77,7 +77,7 @@ switch ($base_url) {
   case "southampton-digital-pw":
     include('config-dev.php');
     break;
-  // DEV CONFIG
+  // PROD CONFIG
   case "southampton.digital":
     include('config-prod.php');
     break;
