@@ -7,22 +7,6 @@
  * This occurs after all autoload modules have been initialized, but before the current page
  * has been determined. This is a good place to attach hooks. You may place whatever you'd
  * like in this file. For example:
- * 
- * $wire->addHookAfter('Page::render', function($event) {
- *   $event->return = str_replace("</body>", "<p>Hello World</p></body>", $event->return);
- * });
- * 
- */
-
-<?php namespace ProcessWire;
-
-/**
- * ProcessWire Bootstrap Initialization
- * ====================================
- * This init.php file is called during ProcessWire bootstrap initialization process.
- * This occurs after all autoload modules have been initialized, but before the current page
- * has been determined. This is a good place to attach hooks. You may place whatever you'd
- * like in this file. For example:
  *
  * $wire->addHookAfter('Page::render', function($event) {
  *   $event->return = str_replace("</body>", "<p>Hello World</p></body>", $event->return);
@@ -132,6 +116,21 @@ if(!$pages->get('/event-listings/')->id) {
   $p->parent = $pages->get('/');
   $p->name = 'Event Listings';
   $p->title = 'Event Listings';
+
+  $p->save();
+}
+
+if(!$pages->get('/event-listings/test-event-whoo/')->id) {
+  $p = new Page();
+  $p->template = 'event';
+  $p->parent = $pages->get('/event-listings/');
+  $p->name = 'Test Event Whoo';
+  $p->summary = 'This is an awesome test event';
+  $p->href = 'www.google.com';
+  $p->ticket_price = '120';
+  $p->group_name = 'Southampton Digital';
+  $p->group_contact_info = 'contact@southampton.digital';
+  $p->location = 'board game cafe';
 
   $p->save();
 }
